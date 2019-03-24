@@ -5,24 +5,36 @@
 
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link href="{% static " css/blog.css" %}" rel="stylesheet">
+
 </head>
 
+<!-- Styles -->
+<link href="{% static 'css/app.css' %}" rel="stylesheet" />
+
 <body>
+    <header id="masthead">
+        <h1 id="site-title">
+            <a href="/">
+                <span class="title"> Tim Beckett </span>
+                <span class="tagline"> Web Portfolio </span>
+            </a>
+        </h1>
+        <!-- Nav Bar -->
+        {% include 'partials/_nav.html' %}
+    </header>
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
-    <aside id="sidebar">
+    <div id="sidebar">
+        <h2>My blog</h2>
+        <p>This is my blog. I've written {% total_posts %} posts so far.</p>
 
-        <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a></p>
 
-        <p>I have written {% total_posts %} posts so far.</p>
+        <h3>Latest posts</h3>
+        {% show_latest_posts 3 %}
 
-        <h3>Latest Posts</h3>
-        {% show_latest_posts 5 %}
-
-        <h3>Most Commented Posts</h3>
+        <h3>Most commented posts</h3>
         {% get_most_commented_posts as most_commented_posts %}
         <ul>
             {% for post in most_commented_posts %}
@@ -31,7 +43,7 @@
             </li>
             {% endfor %}
         </ul>
-    </aside>
+    </div>
 </body>
 
 </html>

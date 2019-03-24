@@ -1,0 +1,14 @@
+{
+  "name": "djangoblogportfolio",
+  "version": "1.0.0",
+  "description": "\"Blog and Portfolio built on Django\"",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass static/sass/main.scss djangoblogportfolio/static/css/app.css -w"
+  },
+  "author": "Tim Beckett",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

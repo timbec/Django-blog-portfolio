@@ -34,6 +34,7 @@ sitemaps = {
 }
 
 urlpatterns = [
+    url('', include('pages.urls')),
     url(r'^admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace='blog')),
     path('sitemap.xml', sitemap, {
