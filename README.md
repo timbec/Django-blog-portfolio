@@ -5,3 +5,6 @@ Currently consists of a couple of static pages (perhaps made dynamic at some lat
 Will eventually include: - WYSIWYG editor. - ability to share articles via social media - customized admin panel. - ability to sort articles via tags and categories.
 
 For the moment, the styling and interface is very simple as I want to focus on the Django/Python aspects of the site. However, I will eventually build out the front end using either Django's REST API or GraphQL (using something like http://docs.graphene-python.org/projects/django/en/latest/) and some variation of React.js (either Next.js or Gatsby.js)
+
+TO SET UP CLONED SITE, FOLLOW INSTRUCTIONS HERE: 
+https://stackoverflow.com/questions/37094032/how-to-run-cloned-django-project

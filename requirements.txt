@@ -1,7 +1,7 @@
 altgraph==0.16.1
 astroid==2.1.0
 autopep8==1.4.3
-Django==2.1.5
+Django>=2.1.6
 django-markdownx==2.0.28
 django-taggit==0.23.0
 future==0.17.1
