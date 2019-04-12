@@ -1,49 +1,63 @@
 {% load blog_tags %}
 {% load static %}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tim Beckett Portfolio</title>
 
+    <!-- CSRF Token -->
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,700">
+
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/dxe7rkb.css"> -->
+
+    <!-- Styles -->
+    <link href="{% static 'css/app.css' %}" rel="stylesheet" />
 </head>
 
-<!-- Styles -->
-<link href="{% static 'css/app.css' %}" rel="stylesheet" />
-
 <body>
-    <header id="masthead">
-        <h1 id="site-title">
-            <a href="/">
-                <span class="title"> Tim Beckett </span>
-                <span class="tagline"> Web Portfolio </span>
-            </a>
-        </h1>
-        <!-- Nav Bar -->
-        {% include 'partials/_nav.html' %}
-    </header>
-    <div id="content">
-        {% block content %}
-        {% endblock %}
-    </div>
-    <div id="sidebar">
-        <h2>My blog</h2>
-        <p>This is my blog. I've written {% total_posts %} posts so far.</p>
+    <main class="page">
 
+        <header id="masthead" class="grid">
+            <h1 class="page-title">
+                <a href="/">Tim Beckett</a>
+            </h1>
+            <div class="item small-ad">
+                <a class="link-block" href="#">
+                    Front End <span class="serif">Python</span> Developer
+                </a>
+            </div>
+            <!-- Nav Bar -->
+            {% include 'partials/_nav.html' %}
+        </header>
+        <div class="blog--container">
+            {% block content %}
+            {% endblock %}
+            <aside class="blog--sidebar">
 
-        <h3>Latest posts</h3>
-        {% show_latest_posts 3 %}
+                <h3>Latest posts</h3>
+                {% show_latest_posts 3 %}
 
-        <h3>Most commented posts</h3>
-        {% get_most_commented_posts as most_commented_posts %}
-        <ul>
-            {% for post in most_commented_posts %}
-            <li>
-                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+                <h3>Most commented posts</h3>
+                {% get_most_commented_posts as most_commented_posts %}
+                <ul>
+                    {% for post in most_commented_posts %}
+                    <li>
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <p>{% total_posts %} posts so far.</p>
+            </aside>
+        </div>
 </body>
 
 </html>

@@ -12,6 +12,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,700">
 
     <!-- <link rel="stylesheet" href="https://use.typekit.net/dxe7rkb.css"> -->
 
@@ -20,30 +21,39 @@
 </head>
 
 <body>
-    <header id="masthead">
-        <h1 id="site-title">
-            <a href="/">
-                <span class="title"> Tim Beckett </span>
-                <span class="tagline"> Web Portfolio </span>
-            </a>
-        </h1>
-        <!-- Nav Bar -->
-        {% include 'partials/_nav.html' %}
-    </header>
+    <main class="page">
 
-    <div id="content">{% block content %} {% endblock %}</div>
+        <header id="masthead" class="grid">
+            <h1 class="page-title">
+                <a href="/">Tim Beckett</a>
+            </h1>
+            <div class="item small-ad">
+                <a class="link-block" href="#">
+                    Front End <span class="serif">Python</span> Developer
+                </a>
+            </div>
+            <!-- <div class="item article-header">
+                <h2 class="title-block">I Build Stuff</h2>
+            </div> -->
+            <!-- Nav Bar -->
+            {% include 'partials/_nav.html' %}
+        </header>
 
-    <footer class="container text-center">
-        <ul class="footer-links">
-            <li><a href="https://www.linkedin.com/in/timbeckett1/">Linkedin</a></li>
-            <li><a href="https://twitter.com/tim_beckett">Twitter</a></li>
-            <li><a href="https://github.com/timbec">Github</a></li>
-            <li><a href="https://codepen.io/timbeckett/">CodePen</a></li>
-        </ul>
-        <!-- -.footer-links -->
+        <div id="content">{% block content %} {% endblock %}</div>
 
-        <p class="footer-copyright">&copy; Tim Beckett 2018</p>
-    </footer>
+        <footer class="container text-center footer">
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/timbeckett1/">Linkedin</a></li>
+                <li><a href="https://twitter.com/tim_beckett">Twitter</a></li>
+                <li><a href="https://github.com/timbec">Github</a></li>
+                <li><a href="https://codepen.io/timbeckett/">CodePen</a></li>
+            </ul>
+            <!-- -.footer-links -->
+
+            <p class="footer-copyright">&copy; Tim Beckett 2018</p>
+        </footer>
+    </main>
+    <!--.main-->
 
     <!-- <script src="{% static 'js/main.js' %}"></script> -->
 </body>
