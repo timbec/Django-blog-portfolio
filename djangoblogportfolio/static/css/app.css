@@ -1,10 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 @font-face {
   font-family: 'FontAwesome';
@@ -1669,7 +1669,7 @@
   content: "\f20c"; }
 
 body {
-  font-family: "Lato", san-serif;
+  font-family: "Georgia", serif;
   color: #777;
   margin: 0;
   box-sizing: border-box; }
@@ -1855,7 +1855,7 @@ html {
 body {
   font-size: 16px;
   line-height: 24px;
-  font-family: "Varela Round", Arial, "Helvetica Neue", Helvetica, serif;
+  font-family: "Raleway", sans-serif;
   color: #09021d; }
 
 h1,
@@ -1864,18 +1864,20 @@ h3 {
   text-align: center;
   color: #09021d;
   padding: 1em 0;
+  font-family: "Oswald", sans-serif;
   margin: 0; }
 
 h1 a,
 h2 a,
 h3 a {
   color: #09021d;
+  font-family: "Oswald", sans-serif;
   text-decoration: none;
   margin-bottom: 1em; }
 
 p {
   color: #09021d;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
   padding: .5em 0;
   margin: 0; }
@@ -1889,7 +1891,8 @@ img {
   height: auto; }
 
 a {
-  color: #012C52; }
+  color: #012C52;
+  font-family: "Raleway", sans-serif; }
 
 a:hover {
   color: #C6372C; }
@@ -2147,8 +2150,94 @@ footer p.footer-copyright {
   transition: margin-left .5s;
   padding: 0 5%; }
 
-#slider ul li {
-  list-style: none; }
+#slider .slider-wrapper {
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  display: grid; }
+  #slider .slider-wrapper div:nth-child(1) {
+    grid-row: 1/4;
+    grid-column: 1/5; }
+  #slider .slider-wrapper div:nth-child(2) {
+    grid-row: 5/7;
+    grid-column: 2/6;
+    z-index: 10; }
+  #slider .slider-wrapper div:nth-child(3) {
+    grid-row: 3/5;
+    grid-column: 4/7; }
+
+/*Blog Grid*/
+.blog--container {
+  display: grid;
+  grid-template-columns: repeat(12, 8.2%); }
+
+.blog--content {
+  grid-column: 2/8; }
+  .blog--content article {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    padding: 3rem 5rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px dotted #ccc; }
+    .blog--content article .blog--title {
+      grid-row: 2/3; }
+    .blog--content article .text-content {
+      grid-column: 2 / span 2;
+      grid-row: 3/4;
+      padding: 1rem 5rem; }
+    .blog--content article .tags {
+      grid-row: 4/5;
+      padding-left: 5rem; }
+      .blog--content article .tags a {
+        text-decoration: none; }
+
+.date {
+  width: 9rem;
+  padding: 1rem;
+  grid-column: 1/2;
+  grid-row: 1/1;
+  border: 1px solid #ccc; }
+
+.blog--sidebar {
+  grid-column: 9/12; }
+
+.blog--title a {
+  font-family: "Oswald", sans-serif; }
+
+.blog--sidebar {
+  margin-top: 5rem; }
+  .blog--sidebar h3 {
+    font-family: "Oswald", sans-serif; }
+  .blog--sidebar ul, .blog--sidebar p {
+    text-align: center; }
+  .blog--sidebar li {
+    list-style: none; }
+  .blog--sidebar a {
+    text-decoration: none; }
+
+.blog--detail {
+  grid-column: 2/ 9;
+  display: grid;
+  grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 56rem) [main-end] minmax(1em, 1fr) [full-end];
+  grid-gap: 1em; }
+  .blog--detail section {
+    grid-column: main; }
+
+#blog-content {
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-column-gap: 10px; }
+
+article img {
+  width: 100% !important;
+  grid-column: 1/ -1;
+  margin: 10px 0; }
+
+article p {
+  grid-column: 2/3; }
+
+article > * {
+  grid-column: 2;
+  min-width: 0; }
 
 .notes {
   padding-bottom: 6rem; }
@@ -2844,6 +2933,8 @@ ul.content__list li {
     color: #09021d;
     text-decoration: none;
     font-size: 2.2rem;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
     padding: 8px 0; }
   .menu-container .menu.sidenav ul a:hover {
     border-bottom: 5px solid #C6372C; }
