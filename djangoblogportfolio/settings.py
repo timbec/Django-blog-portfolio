@@ -136,6 +136,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'djangoblogportfolio/static')
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'timothybenjaminbeckett@gmail.com'
@@ -145,4 +146,4 @@ EMAIL_USE_TLS = True
 
 
 # Contact Page
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
