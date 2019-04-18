@@ -41,5 +41,4 @@ urlpatterns = [
         'sitemaps': sitemaps
     },
         name='django.contrib.sitemaps.views.sitemap'),
-    path('', include('sendemail.urls')),
 ]

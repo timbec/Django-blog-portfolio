@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     # DB
     'django.contrib.postgres',
-    # Contact Page
-    'sendemail.apps.SendemailConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -143,7 +142,3 @@ EMAIL_HOST_USER = 'timothybenjaminbeckett@gmail.com'
 EMAIL_HOST_PASSWORD = 'Tb100318#'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-
-# Contact Page
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
