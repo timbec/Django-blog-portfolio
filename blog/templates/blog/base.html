@@ -23,6 +23,25 @@
 </head>
 
 <body>
+    <!-- Mobile Navigation. Have to decide whether this should be main navigation -->
+    <div class="navigation mobile-navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="/" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="/#about" class="navigation__link">About</a></li>
+                <li class="navigation__item"><a href="/#portfolio" class="navigation__link">Portfolio</a></li>
+                <li class="navigation__item"><a href="/blog" class="navigation__link">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
     <main class="page">
 
         <header id="masthead" class="grid">
@@ -58,6 +77,18 @@
                 <p>{% total_posts %} posts so far.</p>
             </aside>
         </div>
+
+        <footer class="container text-center footer">
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/timbeckett1/">Linkedin</a></li>
+                <li><a href="https://twitter.com/tim_beckett">Twitter</a></li>
+                <li><a href="https://github.com/timbec">Github</a></li>
+                <li><a href="https://codepen.io/timbeckett/">CodePen</a></li>
+            </ul>
+            <!-- -.footer-links -->
+
+            <p class="footer-copyright">&copy; Tim Beckett 2019</p>
+        </footer>
 </body>
 
 </html>
