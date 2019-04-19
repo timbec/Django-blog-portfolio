@@ -1928,14 +1928,14 @@ header h1.page-title {
   grid-row: 1/4;
   grid-column: 1/13;
   padding: 0;
-  margin-top: 8px;
+  margin-top: 9px;
   border-bottom: 5px solid #000; }
 
 header h1 a {
   color: #000;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
-  font-size: 10rem;
+  font-size: 9rem;
   line-height: 1;
   text-transform: uppercase;
   -webkit-backface-visibility: hidden;
@@ -2169,7 +2169,7 @@ h2.title-block {
     top: 0;
     transform: rotate(-135deg); }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 900px) {
   .navigation {
     display: none; }
   .menu-container {
@@ -2283,7 +2283,7 @@ footer p.footer-copyright {
   .footer {
     grid-row: 6 / 7; } }
 
-@media (min-width: 840px) {
+@media (min-width: 720px) {
   .grid {
     grid-template-columns: repeat(12, 8.33333%); }
   .small-ad {
@@ -2309,7 +2309,7 @@ footer p.footer-copyright {
     grid-row: 4/5;
     grid-column: 1/12; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .small-ad {
     grid-row: 1/2;
     grid-column: 1/4; }
@@ -2356,12 +2356,18 @@ footer p.footer-copyright {
 
 .blog--content {
   grid-column: 2/8; }
+  @media only screen and (max-width: 56.25em) {
+    .blog--content {
+      grid-column: 1/13; } }
   .blog--content article {
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     padding: 3rem 5rem;
     margin-bottom: 5rem;
     border-bottom: 1px dotted #ccc; }
+    @media only screen and (max-width: 56.25em) {
+      .blog--content article {
+        padding: 2rem 1rem; } }
     .blog--content article .blog--title {
       grid-row: 2/3; }
     .blog--content article .text-content {
@@ -2383,6 +2389,9 @@ footer p.footer-copyright {
 
 .blog--sidebar {
   grid-column: 9/12; }
+  @media only screen and (max-width: 56.25em) {
+    .blog--sidebar {
+      grid-column: 1/12; } }
 
 .blog--title a {
   font-family: "Oswald", sans-serif; }
