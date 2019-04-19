@@ -1,0 +1,27 @@
+aside h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  width: 100%;
+}
+
+aside > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+aside > ul li {
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside > ul li ul {
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,98 @@
+
+.item {
+  margin-bottom: 20px;
+}
+
+/**This needs to be added to and switched out with the grids on 'mixims'*/
+@media (min-width: 900px) {
+  .grid {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 20%);
+    display: grid;
+  }
+  .small-ad, .bg-block, .community, .footer {
+    grid-column: 1 / 6;
+  }
+  .small-ad {
+    grid-row: 1 / 2;
+  }
+  #masthead, .article-body {
+    grid-row: 2 / 3;
+  }
+  #masthead {
+    grid-column: 1 / 3;
+  }
+  .article-body {
+    grid-column: 3 / 6;
+    align-self: center;
+    padding-left: 20px;
+  }
+  .bg-block {
+    grid-row: 4 / 5;
+  }
+  .community {
+    grid-row: 5 / 6;
+  }
+  .footer {
+    grid-row: 6 / 7;
+  }
+}
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(12, 8.33333334%);
+  }
+  .small-ad {
+    grid-column: 1/3;
+  }
+  #masthead {
+    grid-row: 1/2;
+    grid-column: 3/12;
+    align-self: flex-end;
+  }
+  .article-body {
+    grid-row: 2/3;
+    grid-column: 7/12;
+  }
+  .bg-block {
+    grid-row: 2/3;
+    grid-column: 1/8;
+  }
+  .community {
+    grid-row: 3/4;
+    grid-column: 1/12;
+    display: flex;
+  }
+  .community-header {
+    text-align: left;
+    align-self: center;
+  }
+  .footer {
+    grid-row: 4/5;
+    grid-column: 1/12;
+  }
+}
+@media (min-width: 960px) {
+  .small-ad {
+    grid-row: 1/2;
+    grid-column: 1/4;
+  }
+  #masthead {
+    grid-row: 1/2;
+    grid-column: 4/11;
+  }
+  .article-body {
+    grid-row: 2/3;
+    grid-column: 7/12;
+    align-self: flex-start;
+  }
+  .bg-block {
+    grid-row: 1/3;
+    grid-column: 2/7;
+  }
+
+  .community {
+    grid-row: 3/4;
+    grid-column: 3/11;
+    padding-left: 20px;
+  }
+}

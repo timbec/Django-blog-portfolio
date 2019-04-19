@@ -1,0 +1,171 @@
+
+/*Styles for the Home Page*/
+
+.slider-wrapper {
+  width: 100%;
+  margin: 20px auto;
+  height: 40em;
+}
+
+#portfolio {
+  .portfolio__title {
+    font-size: 6rem;
+    font-family: $sans;
+    text-transform: uppercase; 
+    border-bottom: 5px solid $color-black;
+  }
+  .portfolio__content {
+     margin: 2rem 3rem;
+    display: grid; 
+    grid-template-columns: repeat(12, 8%);
+    grid-gap: 1%;
+
+    @include respond(phone) {
+      margin: 2rem 2rem;
+      grid-template-columns: repeat(6, 16%);
+    }
+      li {
+      list-style: none; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      grid-column: span 2;
+      padding: .5rem;
+      border: 2px solid #ccc; 
+      img {
+        width: 100%; 
+        height: auto; 
+      }
+
+      @include respond(phone) {
+        grid-column: span 3;
+      }
+    }
+
+    li.large-logo {
+      grid-column: span 3;
+    @include respond(phone) {
+        grid-column: span 6;
+      }
+    }
+  }
+}
+
+#portfolio nav {
+  padding: 0;
+  margin: 0;
+}
+
+#portfolio nav .nav__controls {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+#portfolio nav .nav__controls li {
+  list-style: none;
+  height: 30px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+#portfolio nav .nav__controls li:hover {
+  padding-bottom: 0;
+  border-bottom: 5px solid #C6372C;
+}
+
+#portfolio nav .nav__label {
+  color: #09021d;
+}
+
+#portfolio ul.content__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+/* https://www.w3schools.com/howto/howto_css_image_overlay.asp*/
+
+li.work {
+  list-style: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+figure img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #09021d;
+}
+
+figure figcaption h2 {
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+figure figcaption h2 a {
+  color: white;
+}
+
+figure figcaption h2 a:hover {
+  color: white;
+}
+
+figure:hover figcaption {
+  opacity: 0.8;
+}
+
+.company__details {
+  display: none;
+}

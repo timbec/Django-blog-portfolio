@@ -1,0 +1,28 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+
+// Variable
+@import "variables/variables";
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap';
+@import 'admin/font-awesome';
+@import 'admin/metisMenu';
+@import 'admin/sb-admin-2';
+@import 'admin/blog-post';
+@import 'vendor/vendor';
+
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/*Custom Admin Styles*/
+
+.ck-blurred.ck.ck-editor__editable.ck-content {
+  height: 200px;
+}

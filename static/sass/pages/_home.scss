@@ -1,0 +1,21 @@
+
+#slider {
+    .slider-wrapper {
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        display: grid; 
+        div:nth-child(1) {
+            grid-row: 1/4;
+            grid-column: 1/5; 
+        }
+        div:nth-child(2) {
+            grid-row: 5/7;
+            grid-column: 2/6;
+            z-index: 10;  
+        }
+        div:nth-child(3) {
+            grid-row: 3/5;
+            grid-column: 4/7; 
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import 'header';
+@import 'navigation';
+@import 'footer';
+@import 'from-codepen-example';
+
+/*Layouts*/
+
+#page {
+  -webkit-transition: margin-left .5s;
+  transition: margin-left .5s;
+  padding: 0 5%;
+}
