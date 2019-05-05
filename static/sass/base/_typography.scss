@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
-@import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
 
 body {
   font-size: 16px;
@@ -15,10 +11,10 @@ body {
 h1,
 h2,
 h3 {
-  text-align: center;
+  text-align: left;
   color: $color-black;
   padding: 1em 0;
-  font-family: $sans; 
+  font-family: $raleway; 
   margin: 0;
 }
 
@@ -26,14 +22,14 @@ h1 a,
 h2 a,
 h3 a {
   color: $color-black;
-  font-family: $sans; 
+  font-family: $raleway; 
   text-decoration: none;
   margin-bottom: 1em;
 }
 
 p {
   color: $color-black;
-  font-family: $body-font;
+  font-family: $sans;
   font-weight: 300;
   padding: .5em 0;
   margin: 0;
@@ -56,4 +52,20 @@ a {
 
 a:hover {
   color: #C6372C;
+}
+
+code {
+  font-family: $monospace; 
+  font-size: 1.6rem; 
+  background: $color-black; 
+  color: white; 
+  float:left; 
+  width: 100%; 
+  padding: 2rem; 
+  margin-bottom: 2rem; 
+}
+
+i {
+  font-family: $monospace; 
+  font-style: normal; 
 }

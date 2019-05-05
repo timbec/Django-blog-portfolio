@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
 
 $color-black: #09021d; 
 $color-red: red; 
@@ -11,8 +16,11 @@ $color-white: #fff;
 //Imported from codepen demo:
 $sans: 'Oswald', sans-serif; 
 $serif: 'Georgia', serif; 
-$body-font: 'Raleway', sans-serif; 
-$body: 'Helvetica Neue', 'Arial', sans-serif;
+$raleway: 'Raleway', sans-serif; 
+$quicksand: 'Quicksand', sans-serif; 
+$sans: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+$body-font: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+$monospace: 'Lucida Console', monospace; 
 $bp-small: 750px;
 $bp-med: 840px; 
 $bp-large: 1200px;
