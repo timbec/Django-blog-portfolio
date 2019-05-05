@@ -24,6 +24,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 /* FONT PATH
  * -------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+@import url("https://fonts.googleapis.com/css?family=PT+Mono");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:500");
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.2.0");
@@ -2349,6 +2352,26 @@ footer p.footer-copyright {
     grid-row: 3/5;
     grid-column: 4/7; }
 
+/*Front Page*/
+#front-page-container #about {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 4rem; }
+  #front-page-container #about p {
+    width: 100%;
+    text-align: justify; }
+  #front-page-container #about .left {
+    grid-column: 2/7; }
+  #front-page-container #about .right {
+    grid-column: 7/12; }
+  @media only screen and (max-width: 56.25em) {
+    #front-page-container #about {
+      grid-column-gap: 0; } }
+
+@media only screen and (max-width: 56.25em) {
+  #front-page-container {
+    padding: 2rem; } }
+
 /*Blog Grid*/
 .blog--container {
   display: grid;
@@ -2361,15 +2384,19 @@ footer p.footer-copyright {
       grid-column: 1/13; } }
   .blog--content article {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    padding: 3rem 5rem;
+    grid-template-columns: 0px 1fr 20px;
+    padding: 3rem 5rem 3rem 0;
     margin-bottom: 5rem;
     border-bottom: 1px dotted #ccc; }
     @media only screen and (max-width: 56.25em) {
       .blog--content article {
         padding: 2rem 1rem; } }
     .blog--content article .blog--title {
-      grid-row: 2/3; }
+      grid-row: 2/3;
+      text-align: left; }
+      .blog--content article .blog--title a {
+        text-transform: uppercase;
+        font-family: 'Quicksand', sans-serif; }
     .blog--content article .text-content {
       grid-column: 2 / span 2;
       grid-row: 3/4;
@@ -2381,6 +2408,7 @@ footer p.footer-copyright {
         text-decoration: none; }
 
 .date {
+  font-size: 12px;
   width: 9rem;
   padding: 1rem;
   grid-column: 1/2;
@@ -2393,13 +2421,10 @@ footer p.footer-copyright {
     .blog--sidebar {
       grid-column: 1/12; } }
 
-.blog--title a {
-  font-family: "Oswald", sans-serif; }
-
 .blog--sidebar {
   margin-top: 5rem; }
   .blog--sidebar h3 {
-    font-family: "Oswald", sans-serif; }
+    font-family: 'Quicksand', sans-serif; }
   .blog--sidebar ul, .blog--sidebar p {
     text-align: center; }
   .blog--sidebar li {
@@ -2499,7 +2524,8 @@ article > * {
   @media only screen and (max-width: 37.5em) {
     #portfolio .portfolio__content {
       margin: 2rem 2rem;
-      grid-template-columns: repeat(6, 16%); } }
+      grid-template-columns: repeat(6, 16%);
+      padding-bottom: 15rem; } }
   #portfolio .portfolio__content li {
     list-style: none;
     display: flex;
@@ -3124,19 +3150,6 @@ ul.content__list li {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-  /*Front Page*/
-  #front-page-container #about {
-    display: grid;
-    grid-template-columns: auto;
-    grid-column-gap: 4rem;
-    padding: 2rem; }
-    #front-page-container #about p {
-      width: 100%;
-      text-align: justify; }
-    #front-page-container #about .left {
-      grid-column: 2/7; }
-    #front-page-container #about .right {
-      grid-column: 7/12; }
   /*Work Pages*/
   #work-content {
     grid-template-columns: repeat(5, 1fr);

@@ -19,3 +19,32 @@
         }
     }
 }
+
+ /*Front Page*/
+
+  #front-page-container {
+    #about {
+      display: grid;
+      grid-template-columns: auto;
+      grid-column-gap: 4rem;
+      p {
+        width: 100%;
+        text-align: justify;
+      }
+      .left {
+        grid-column: 2/7;
+      }
+      .right {
+        grid-column: 7/12;
+      }
+
+
+        @include respond(tab-port) {
+            grid-column-gap: 0; 
+        }
+    }
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+  }

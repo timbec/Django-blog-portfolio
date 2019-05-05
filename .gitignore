@@ -120,9 +120,18 @@ venv.bak/
 /site
 /notes
 
+# excess
+/blog_orig
+
+# node 
+/node_modules
+
 #images 
 /static 
 /media
+
+#settings 
+djangoblogportfolio/settings.py
 
 # mypy
 .mypy_cache/

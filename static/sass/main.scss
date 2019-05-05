@@ -554,27 +554,6 @@ ul.content__list li {
             justify-content: center;
   }
 
-  /*Front Page*/
-
-  #front-page-container {
-    #about {
-      display: grid;
-      grid-template-columns: auto;
-      grid-column-gap: 4rem;
-      padding: 2rem;
-      p {
-        width: 100%;
-        text-align: justify;
-      }
-      .left {
-        grid-column: 2/7;
-      }
-      .right {
-        grid-column: 7/12;
-      }
-    }
-  }
-
   /*Work Pages*/
 
   #work-content {

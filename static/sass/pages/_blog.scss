@@ -18,8 +18,8 @@
 
   article {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    padding: 3rem 5rem; 
+    grid-template-columns: 0px 1fr 20px;
+    padding: 3rem 5rem 3rem 0; 
     margin-bottom: 5rem; 
     border-bottom: 1px dotted #ccc; 
 
@@ -31,6 +31,12 @@
 
   .blog--title {
     grid-row: 2/3; 
+    text-align: left;
+
+      a {
+        text-transform:uppercase; 
+        font-family: 'Quicksand', sans-serif;
+      }
   } 
   .text-content {
     grid-column: 2 / span 2; 
@@ -48,6 +54,7 @@
 }
 
   .date {
+    font-size: 12px; 
     width: 9rem; 
     padding: 1rem; 
     grid-column: 1/2; 
@@ -63,18 +70,12 @@
   }
 }
 
-.blog--title {
-   a {
-     font-family: $sans; 
-   }
-}
-
 
 // Sidebar 
 .blog--sidebar {
   margin-top: 5rem; 
-  h3 {
-    font-family: $sans; 
+  h3 { 
+    font-family: 'Quicksand', sans-serif;
   }
   ul, p {
     text-align: center; 

@@ -23,6 +23,7 @@
     @include respond(phone) {
       margin: 2rem 2rem;
       grid-template-columns: repeat(6, 16%);
+      padding-bottom: 15rem;
     }
       li {
       list-style: none; 
