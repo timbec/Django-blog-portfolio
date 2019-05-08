@@ -8,6 +8,12 @@
 }
 
 #portfolio {
+  margin-top: 10rem; 
+
+  @include respond(phone) {
+    margin-top: 0rem;
+  }
+
   .portfolio__title {
     font-size: 6rem;
     font-family: $sans;
@@ -24,6 +30,7 @@
       margin: 2rem 2rem;
       grid-template-columns: repeat(6, 16%);
       padding-bottom: 15rem;
+      margin-top: 2rem; 
     }
       li {
       list-style: none; 

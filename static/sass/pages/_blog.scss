@@ -9,58 +9,82 @@
   grid-template-columns: repeat(12, 8.2%);
 }
 
-.blog--content {
-  grid-column: 2/8;
+.blog-list {
+  grid-column: 2/9;
 
   @include respond(tab-port) {
     grid-column: 1/13; 
   }
 
-  article {
+  .blog-post {
     display: grid;
     grid-template-columns: 0px 1fr 20px;
     padding: 3rem 5rem 3rem 0; 
     margin-bottom: 5rem; 
-    border-bottom: 1px dotted #ccc; 
+    border-bottom: 1px dotted #ccc;   
 
 
   @include respond(tab-port) {
     padding: 2rem 1rem;
+
   }
-  
 
-  .blog--title {
-    grid-row: 2/3; 
-    text-align: left;
+  &__title {
+      grid-row: 2/3; 
+      text-align: left;
 
-      a {
-        text-transform:uppercase; 
-        font-family: 'Quicksand', sans-serif;
+        a {
+          text-transform:uppercase; 
+          font-family: 'Quicksand', sans-serif;
+        }
+    } 
+
+    &__date {
+      font-size: 12px; 
+      width: 9rem; 
+      padding: 1rem; 
+      grid-column: 1/2; 
+      grid-row: 1/1; 
+      border: 1px solid #ccc; 
+    }
+
+    &__image {
+      width: 20rem; 
+      height: 15rem; 
+      float: left; 
+      transform: translate(-3rem) skewX(12deg); 
+      position: relative; 
+      overflow: hidden; 
+      border-radius: 50%; 
+
+       @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
       }
-  } 
-  .text-content {
+    }
+
+    &__content {
     grid-column: 2 / span 2; 
     grid-row: 3/4; 
     padding: 1rem 5rem; 
-  }
-  .tags {
-    grid-row: 4/5;
-    padding-left: 5rem; 
-    a {
-      text-decoration: none; 
     }
-  }
-  }
+
+    &__tags {
+      grid-row: 4/5;
+      padding-left: 5rem; 
+      a {
+        text-decoration: none; 
+      }
+    }
+
+    
+
 }
 
-  .date {
-    font-size: 12px; 
-    width: 9rem; 
-    padding: 1rem; 
-    grid-column: 1/2; 
-    grid-row: 1/1; 
-    border: 1px solid #ccc; 
-  }
 
 .blog--sidebar {
   grid-column: 9/12; 

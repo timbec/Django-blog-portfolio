@@ -122,6 +122,8 @@ venv.bak/
 
 # excess
 /blog_orig
+/static/css_original
+/static/sass_from_old
 
 # node 
 /node_modules

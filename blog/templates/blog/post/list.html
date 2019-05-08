@@ -3,25 +3,29 @@
 
 {% block title %}Blog{% endblock %}
 {% block content %}
-<div class="blog--content">
+<div class="blog-list">
   {% if tag %}
   <h2>Posts tagged with "{{ tag.name }}"</h2>
   {% endif %}
   {% for post in posts %}
-  <article class="blog--post">
-    <h2 class="blog--title">
+  <article class="blog-post">
+    <figure class="blog-post__image">
+      <!-- Have to see how Traversey did this. Stored in folders by date -->
+      <img src="{{ post.featured_image.url }}" alt="">
+    </figure>
+    <h2 class="blog-post__title">
       <a href="{{ post.get_absolute_url }}">
         {{ post.title }}
       </a>
     </h2>
-    <span class="date">
+    <span class="blog-post__date">
       {{ post.publish }}
     </span>
-    <div class="text-content">
+    <div class="blog-post__content">
       {{ post.body|markdown|truncatewords_html:30 }}
     </div>
 
-    <span class="tags">
+    <span class="blog-post__tags">
       Tags:
       {% for tag in post.tags.all %}
       <a href="{% url 'blog:post_list_by_tag' tag.slug %}">
