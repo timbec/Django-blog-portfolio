@@ -5,33 +5,62 @@
 }
 
 .blog--container {
-  display: grid;
-  grid-template-columns: repeat(12, 8.2%);
+  //display: grid;
+  //grid-template-columns: repeat(12, 8.2%);
+
+  @include respond(tab-port) {
+    margin: 0 1rem; 
+  }
 }
 
 .blog-list {
-  grid-column: 2/9;
+  grid-column: center-start/center-end; 
+  margin: 0 2rem;
+
+  @include respond(tab-port) {
+    margin: 10rem 0; 
+  }
+
+  @supports(display: grid) {
+    display: grid; 
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem; 
+    align-items: start; 
+  }
 
   @include respond(tab-port) {
     grid-column: 1/13; 
   }
 
   .blog-post {
+    float: left;
+    width: 33.3333%;
+    margin-bottom: 6rem;
+
+    @supports(display: grid) {
+        width: auto;
+        margin-bottom: 0;
+    }
+
     display: grid;
-    grid-template-columns: 0px 1fr 20px;
-    padding: 3rem 5rem 3rem 0; 
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 5rem;
     margin-bottom: 5rem; 
     border-bottom: 1px dotted #ccc;   
 
+    @include respond(tab-port) {
+      grid-row-gap: .5rem;
+      grid-column-gap: 0rem;
+      margin-bottom: 2rem; 
+    }
 
-  @include respond(tab-port) {
-    padding: 2rem 1rem;
-
-  }
 
   &__title {
-      grid-row: 2/3; 
-      text-align: left;
+      // grid-row: 2/3; 
+      text-align: center;
+      padding: 0;
 
         a {
           text-transform:uppercase; 
@@ -41,30 +70,15 @@
 
     &__date {
       font-size: 12px; 
-      width: 9rem; 
-      padding: 1rem; 
-      grid-column: 1/2; 
-      grid-row: 1/1; 
-      border: 1px solid #ccc; 
-    }
-
-    &__image {
-      width: 20rem; 
-      height: 15rem; 
-      float: left; 
-      transform: translate(-3rem) skewX(12deg); 
-      position: relative; 
-      overflow: hidden; 
-      border-radius: 50%; 
-
-       @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-            -webkit-clip-path: circle(50% at 50% 50%);
-            clip-path: circle(50% at 50% 50%);
-            -webkit-shape-outside: circle(50% at 50% 50%);
-            shape-outside: circle(50% at 50% 50%);
-            border-radius: none;
-        }
-      }
+        width: 7em;
+        height: auto;
+        grid-row: 1 / span 2;
+        transform: translateX(-5rem);
+        transform: translateY(5rem) translateX(-4rem);
+        background: white; 
+        color: $color-black; 
+        padding: 1rem; 
+        border: 1px solid #ccc; 
     }
 
     &__content {
@@ -74,42 +88,25 @@
     }
 
     &__tags {
-      grid-row: 4/5;
-      padding-left: 5rem; 
+      grid-row: 5/6;
+      padding-left: 1rem; 
       a {
         text-decoration: none; 
       }
     }
+  }
 
     
 
 }
 
 
-.blog--sidebar {
-  grid-column: 9/12; 
-
-  @include respond(tab-port) {
-    grid-column: 1/12; 
-  }
-}
 
 
-// Sidebar 
-.blog--sidebar {
-  margin-top: 5rem; 
-  h3 { 
-    font-family: 'Quicksand', sans-serif;
-  }
-  ul, p {
-    text-align: center; 
-  }
-  li {
-    list-style: none; 
-  }
-  a {
-    text-decoration: none; 
-  }
+/**Single Page**/
+
+.blog--container {
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .blog--detail {
@@ -146,3 +143,67 @@
     grid-column: 2;
     min-width: 0;
   }
+
+
+/*******************************
+ * Single Page
+ * ****************************/
+
+
+.single-post-container {
+  display: grid; 
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 20vh min-content 40vw repeat(4, min-content);
+}
+
+.single-post {
+  grid-column: 2/ 12; 
+  grid-row: 1/-1;
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, min-content);
+  margin: 1rem; 
+
+  &__image {
+    grid-column: 1/12; 
+    grid-row: 1/2;
+  }
+
+  &__content {
+    grid-column: 1/9; 
+    grid-row: 2/-1; 
+    margin: 1rem; 
+  }
+
+  &__title {
+    font-size: 4rem; 
+    text-transform: uppercase; 
+    line-height: 1.2; 
+  }
+
+}
+
+  // Sidebar 
+.blog--sidebar {
+    grid-column: 9/12; 
+    grid-row: 2/3;
+
+    @include respond(tab-port) {
+      grid-column: 1/12; 
+      grid-row: auto; 
+    }
+    margin-top: 5rem; 
+
+  h3 { 
+    font-family: 'Quicksand', sans-serif;
+  }
+  ul, p {
+    text-align: center; 
+  }
+  li {
+    list-style: none; 
+  }
+  a {
+    text-decoration: none; 
+  }
+}

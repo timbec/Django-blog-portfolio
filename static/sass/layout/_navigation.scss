@@ -10,8 +10,8 @@
 
     &__button {
         background-color: $color-black;
-        height: 7rem;
-        width: 7rem;
+        height: 6rem;
+        width: 6rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -20,7 +20,7 @@
         cursor: pointer;
 
         @include respond(tab-port) {
-            top: 2rem;
+            top: 0rem;
             right: 4rem;
         }
 
@@ -118,7 +118,7 @@
     //ICON
     &__icon {
         position: relative;
-        margin-top: 3.5rem;
+        margin-top: 2.5rem;
 
         &,
         &::before,

@@ -1,7 +1,7 @@
 @import 'header';
 @import 'navigation';
 @import 'footer';
-@import 'from-codepen-example';
+//@import 'from-codepen-example';
 
 /*Layouts*/
 
@@ -9,4 +9,10 @@
   -webkit-transition: margin-left .5s;
   transition: margin-left .5s;
   padding: 0 5%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto; 
 }

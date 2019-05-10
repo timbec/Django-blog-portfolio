@@ -150,6 +150,12 @@ EMAIL_HOST_PASSWORD = 'ModernArt@78!'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'timothybenjaminbeckett@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ModernArt@78!'
+# EMAIL_USE_TLS = True
+
 
 # try:
 #     from . local_settings import *
