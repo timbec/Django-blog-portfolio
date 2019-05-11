@@ -1999,7 +1999,8 @@ header h1.mobile-menu-title a {
     .item.small-ad {
       display: block;
       grid-row: 5/auto;
-      grid-column: 1/13; } }
+      grid-column: 1/13;
+      margin: 1rem 2rem; } }
 
 .link-block {
   padding: 20px;
@@ -2398,7 +2399,12 @@ footer p.footer-copyright {
     @media only screen and (max-width: 56.25em) {
       .blog-list .blog-post {
         grid-row-gap: .5rem;
-        grid-column-gap: 0rem;
+        grid-column-gap: 2rem;
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .blog-list .blog-post {
+        grid-row-gap: 1.5rem;
+        grid-column-gap: 5rem;
         margin-bottom: 2rem; } }
     .blog-list .blog-post__title {
       text-align: center;
@@ -2408,7 +2414,7 @@ footer p.footer-copyright {
         font-family: 'Quicksand', sans-serif; }
     .blog-list .blog-post__date {
       font-size: 12px;
-      width: 7em;
+      width: 6em;
       height: auto;
       grid-row: 1 / span 2;
       transform: translateX(-5rem);
@@ -2417,6 +2423,9 @@ footer p.footer-copyright {
       color: #000;
       padding: 1rem;
       border: 1px solid #ccc; }
+      @media only screen and (max-width: 56.25em) {
+        .blog-list .blog-post__date {
+          transform: translateY(6rem) translateX(-3rem); } }
     .blog-list .blog-post__content {
       grid-column: 2 / span 2;
       grid-row: 3/4;
