@@ -1,12 +1,13 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
+{% load martortags %}
 
 <div class="blog-post-container"></div>
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
 
-<div class="single-post">
+<article class="single-post">
 
   <figure class="single-post__image">
     <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
@@ -18,63 +19,24 @@
     <p class="single-post__date">
       {{ post.publish }}
     </p>
-    <section class="single-post__content">
-      {{ post.body|markdown }}
+    <div class="single-post__entry-content">
+
+      <!-- Mortags Editor -->
+      {{ post.body|safe_markdown}}
+
 
       <p class="single-post__share">
         <a href="{% url "blog:post_share" post.id %}">
           Share this post
         </a>
       </p>
-    </section>
-
-    <section class="single-post__similar-posts">
-      <h2>Similar posts</h2>
-      {% for post in similar_posts %}
-      <p>
-        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-      </p>
-      {% empty %}
-      There are no similar posts yet.
-      {% endfor %}
-    </section>
-
-    <section class="single-post__comments">
-
-      {% with comments.count as total_comments %}
-      <h2>
-        {{ total_comments }} comment{{ total_comments|pluralize }}
-      </h2>
-      {% endwith %}
-      {% for comment in comments %}
-      <div class="comment">
-        <p class="info">
-          Comment {{ forloop.counter }} by {{ comment.name }}
-          {{ comment.created }}
-        </p>
-        {{ comment.body|linebreaks }}
-      </div>
-      {% empty %}
-      <p>There are no comments yet.</p>
-      {% endfor %}
-
-      {% if new_comment %}
-      <h2>Your comment has been added.</h2>
-      {% else %}
-      <h2>Add a new comment</h2>
-      <form action="." method="post">
-        {{ comment_form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Add comment"></p>
-      </form>
-      {% endif %}
-    </section>
+    </div>
+    <!--.single-post__entry-content-->
   </div>
-  <!--single-post-->
-
+  <!--.single-post__content-->
   <!-- Blog Sidebar -->
 
-  <aside class="blog--sidebar">
+  <!-- <aside class="blog--sidebar">
 
     <h3>Latest posts</h3>
     {% show_latest_posts 3 %}
@@ -90,9 +52,59 @@
     </ul>
 
     <p>{% total_posts %} posts so far.</p>
-  </aside>
+  </aside> -->
 
+  <section class="single-post__comments">
 
+    {% with comments.count as total_comments %}
+    <h2>
+      {{ total_comments }} comment{{ total_comments|pluralize }}
+    </h2>
+    {% endwith %}
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+    {% empty %}
+    <p>There are no comments yet.</p>
+    {% endfor %}
+
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+    {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+    {% endif %}
+  </section>
+
+  <section class="single-post__similar-posts">
+    <h2>Similar posts</h2>
+    <ul class="single-post__similar-posts-list">
+      {% for post in similar_posts %}
+      <li>
+        <figure class="single-post__image">
+          <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+        </figure>
+        <p>
+          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </p>
+      </li>
+      {% empty %}
+      There are no similar posts yet.
+      {% endfor %}
+    </ul>
+  </section>
+  <!--__similar_posts-->
+</article>
+<!--single-post-->
 
 </div>
 <!--.single-post-container-->
