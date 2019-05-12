@@ -1,5 +1,6 @@
 from django import forms
 from .models import Comment
+from martor.fields import MartorFormField
 
 
 class EmailPostForm(forms.Form):
@@ -18,3 +19,7 @@ class CommentForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField()
+
+
+class PostForm(forms.Form):
+    description = MartorFormField()

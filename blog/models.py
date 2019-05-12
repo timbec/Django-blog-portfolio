@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from taggit.managers import TaggableManager
+from martor.models import MartorField
 
 
 class PublishedManager(models.Manager):
@@ -21,7 +22,9 @@ class Post(models.Model):
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='blog_posts')
-    body = models.TextField()
+    #body = models.TextField()
+    body = MartorField()
+
     featured_image = models.ImageField(
         upload_to='photos/%Y/%m/%d/', blank=True)
 

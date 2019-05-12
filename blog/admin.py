@@ -1,5 +1,8 @@
+from martor.widgets import AdminMartorWidget
 from django.contrib import admin
 from .models import Post, Comment
+
+print(Post)
 
 
 @admin.register(Post)
@@ -12,6 +15,9 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ('author',)
     date_hierarchy = 'publish'
     ordering = ('status', 'publish')
+    # formfield_overrides = {
+    #     models.TextField: {'widget': AdminMartorWidget},
+    # }
 
 
 @admin.register(Comment)
