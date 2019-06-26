@@ -25,6 +25,11 @@
         }
 
         @include respond(phone) {
+            height: 5rem; 
+            width: 5rem; 
+        }
+
+        @include respond(phone) {
             top: 0;
             right: 0;
         }

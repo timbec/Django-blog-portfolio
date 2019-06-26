@@ -11,7 +11,7 @@
   margin-top: 10rem; 
 
   @include respond(phone) {
-    margin-top: 0rem;
+    margin-top: 8rem;
   }
 
   .portfolio__title {
