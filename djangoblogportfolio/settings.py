@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*&v^7cp8dsza30cvjyu282!8t*t^=7qlzeu!(ytn)^7c9368#w'
+# SECRET_KEY = '*&v^7cp8dsza30cvjyu282!8t*t^=7qlzeu!(ytn)^7c9368#w'
+SECRET_KEY = '(c2^)wh^cyn05zk^wj3v(o#yz#6%&5!8fe#rcvu$@$d&xj^3d8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,9 +92,9 @@ WSGI_APPLICATION = 'djangoblogportfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfoliodb',
+        'NAME': 'timbeckett',
         'USER': 'postgres',
-        'PASSWORD': '23mememe'
+        'PASSWORD': 'tB23mememe'
     }
 }
 
@@ -173,6 +174,7 @@ MARTOR_ENABLE_CONFIGS = {
     # to include/revoke jquery (require for admin default django)
     'jquery': 'true',
     'living': 'false',   # to enable/disable live updates in preview
+    'spellcheck': 'true',
 }
 
 # To setup the martor editor with label or not (default is False)

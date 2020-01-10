@@ -182,20 +182,21 @@
         -webkit-box-pack: center;
             -ms-flex-pack: center;
         justify-content: center;
-        -webkit-animation: moveInBottom .5s ease-out .75s;
-                animation: moveInBottom .5s ease-out .75s;
-        -webkit-animation-fill-mode: backwards;
-                animation-fill-mode: backwards;
-            grid-row: 3/4;
-        grid-column: 4/10;
+        -webkit-animation: moveInLeft .5s ease-out .75s forwards;
+        animation: moveInLeft .5s ease-out .75s forwards;
+        // -webkit-animation-fill-mode: forwards;
+        //         animation-fill-mode: forwards;
+        grid-row: 1/3;
+        grid-column: 1/2;
         margin-bottom: 8px; 
+        z-index: 10; 
     }
 
     .menu-container .sidenav.open ul {
         -webkit-box-orient: horizontal !important;
         -webkit-box-direction: normal !important;
-            -ms-flex-direction: row !important;
-                flex-direction: row !important;
+            -ms-flex-direction: column !important;
+                flex-direction: column !important;
         -webkit-transform: none !important;
                 transform: none !important;
     }
@@ -211,15 +212,17 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        flex-direction: column; 
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
     }
 
     .menu-container .menu.sidenav ul li {
-        min-height: 50px;
+        // min-height: 50px;
         list-style: none; 
-        padding: 0 20px;
+        padding: 0 2rem;
+        margin: 1rem 0; 
     }
 
     .menu-container .menu.sidenav ul a {
