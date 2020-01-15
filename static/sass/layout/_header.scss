@@ -14,7 +14,7 @@ header#masthead {
     transform-style: preserve-3d;
     perspective: 10rem; 
 
-    @include respond(tab-port) {
+    @include respond(tab-land) {
       display: block; 
     }
 }
@@ -30,16 +30,17 @@ header h1.page-title {
   text-align: center;
   grid-row: 1/4;
   grid-column: 1/13;
-  padding: 0;
+  padding: 0 1rem;
   margin-top: 9px; 
 
-  @include respond(tab-port) {
+  @include respond(phone) {
     padding: 0 5rem; 
   }
 
-  @include respond(phone) {
-    padding: 0 2rem; 
+  @include respond(tab-port) {
+    padding: 0 3rem; 
   }
+
 }
 
 header h1.page-title:before {
@@ -139,13 +140,17 @@ header h1.mobile-menu-title a {
 
 .item.article-header {
     grid-row: 2/2;
-    grid-column: 3/10;
+    grid-column: 4/10;
   }
 
     h2.title-block {
       text-transform: uppercase; 
       font-family: $sans;
-      font-size:4rem;
+      font-size: 3rem;
+
+      // @include respond(phone) {
+      //     font-size: 4rem; 
+      // }
     }
 
 @-webkit-keyframes moveInLeft {
