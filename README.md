@@ -6,5 +6,14 @@ Will eventually include: - WYSIWYG editor. - ability to share articles via socia
 
 For the moment, the styling and interface is very simple as I want to focus on the Django/Python aspects of the site. However, I will eventually build out the front end using either Django's REST API or GraphQL (using something like http://docs.graphene-python.org/projects/django/en/latest/) and some variation of React.js (either Next.js or Gatsby.js)
 
+Had problems with martor. Followed this thread: 
+
+https://github.com/agusmakmun/django-markdown-editor/issues/95
+
+And ended up installing: 
+
+https://github.com/pylixm/django-mdeditor
+
+
 TO SET UP CLONED SITE, FOLLOW INSTRUCTIONS HERE: 
 https://stackoverflow.com/questions/37094032/how-to-run-cloned-django-project

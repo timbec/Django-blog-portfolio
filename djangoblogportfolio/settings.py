@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     # DB
     'django.contrib.postgres',
     # Editor
-    'martor',
+    # 'martor',
+    'mdeditor',
 
 ]
 
@@ -143,6 +144,7 @@ STATICFILES_DIRS = [
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -169,11 +171,11 @@ EMAIL_USE_TLS = True
 # Global martor settings
 # Input: string boolean, `true/false`
 MARTOR_ENABLE_CONFIGS = {
-    'imgur': 'false',     # to enable/disable imgur/custom uploader.
+    'imgur': 'true',     # to enable/disable imgur/custom uploader.
     'mention': 'false',  # to enable/disable mention
     # to include/revoke jquery (require for admin default django)
     'jquery': 'true',
-    'living': 'false',   # to enable/disable live updates in preview
+    'living': 'true',   # to enable/disable live updates in preview
     'spellcheck': 'true',
 }
 

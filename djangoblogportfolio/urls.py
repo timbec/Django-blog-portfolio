@@ -36,6 +36,7 @@ sitemaps = {
 }
 
 urlpatterns = [
+    url(r'mdeditor/', include('mdeditor.urls')),
     url('', include('pages.urls')),
     url(r'^admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace='blog')),
@@ -45,3 +46,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     path('martor/', include('martor.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

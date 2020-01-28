@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
-{% load martortags %}
+
 
 <div class="blog-post-container"></div>
 {% block title %}{{ post.title }}{% endblock %}
@@ -22,7 +22,8 @@
     <div class="single-post__entry-content">
 
       <!-- Mortags Editor -->
-      {{ post.body|safe_markdown}}
+     
+      {{ post.body }}
 
 
       <p class="single-post__share">
